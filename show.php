@@ -2,13 +2,12 @@
 <html>
 
 <body>
-
     <?php
-    $name = $_GET["name"];
-    $age = $_GET["age"];
-    $gender = $_GET["gender"];
+    $name = $_POST["name"];
+    $age = $_POST["age"];
+    $gender = $_POST["gender"];
     $married = $_POST["married"];
-    
+
     $prefix = "";
     if ($gender == "male"){
         if ($age >= 15){
@@ -29,7 +28,6 @@
     }
     echo "Name: ".$prefix." ".$name;
     ?>
-
 </body>
 
 </html>
