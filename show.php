@@ -7,10 +7,27 @@
     $name = $_GET["name"];
     $age = $_GET["age"];
     $gender = $_GET["gender"];
-
-    echo "Name:".$name."<br>";
-    echo "Age:".$age."<br>";
-    echo "Gender:".$gender."<br>";
+    $married = $_POST["married"];
+    
+    $prefix = "";
+    if ($gender == "male"){
+        if ($age >= 15){
+            $prefix = "นาย";
+        }else{
+            $prefix = "เด็กชาย";
+        }
+    }else{
+        if ($married == "married"){
+            $prefix = "นาง";
+        }else{
+            if ($age < 15){
+                $prefix = "เด็กหญิง";
+            }else{
+                $prefix = "นางสาว";
+            }
+        }
+    }
+    echo "Name: ".$prefix." ".$name;
     ?>
 
 </body>
